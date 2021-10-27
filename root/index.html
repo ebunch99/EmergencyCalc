@@ -1,0 +1,50 @@
+<!-- etc -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Emergency Calculator</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+  </head>
+  <body>
+    <!-- Display Title on Page in Header-->
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <button class= "login_button"
+            onclick="openLogin()">Login</button><br><br>
+            <button class= "logout_button"
+            onclick="logout()">Logout</button><br><br>
+            <button class= "register_button"
+            onclick="openRegister()">Register</button><br><br>
+            <button class= "save_image_button"
+            onclick="saveImage()">Save Image</button><br>
+          </ul>
+        </div>
+      </nav>
+	
+	<section>
+	  <script>
+          function openLogin() {
+              document.getElementById("loginForm").style.display = "block";
+          }
+          function closeLogin(){
+            document.getElementById("logoutForm").style.display = "none";
+          }
+          function openRegister();
+          function closeRegister();
+
+          function logout();
+          function saveImage();
+
+	  </script>
+	</section>
+	<footer id="footer">
+	<p>Dylan Engle,Weston Abner,Eric Bunch &copy;2021</p>
+	</footer>
+  </body>
+</html>
