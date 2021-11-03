@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Dashboard</title>
-    </head>
-    <body>
-        <h2>Welcome to Dashboard</h2>
-        <p><b>Login Email</b> - <%=email %></p>
-        <p><a href="/logout">Logout</a></p>
-    </body>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Display Data using Node.js & MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>UserId</th>
+            <th>Calculation</th>
+            <th>Graph function</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.userid; %></td>
+            <td><%=data.calculation %></td>
+            <td><%=data.graphfunction %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+    <p><a href="/logout">Logout</a></p>
+</body>
 </html>
+

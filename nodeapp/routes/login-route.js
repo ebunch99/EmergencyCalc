@@ -10,12 +10,14 @@ router.post('/login', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
 
-    var sql='SELECT * FROM user WHERE username =? AND password =?';
+    var sql='SELECT userid,username FROM user WHERE username =? AND password =?';
     db.query(sql, [username, password], function (err, data, fields) {
         if(err) throw err
-        if(data.length>0){
+        if(data.length==1){
+            //console.log("USER ID:  "+data[0].userid);
             req.session.loggedinUser= true;
-            req.session.username= username;
+            req.session.username= data[0].username;
+            req.session.userid = data[0].userid;
             res.redirect('/dashboard');
         }else{
             res.render('login-form',{alertMsg:"Your Username or Password is incorrect"});
