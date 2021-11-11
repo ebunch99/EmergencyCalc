@@ -1,11 +1,56 @@
+<!-- etc -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
+    <title>Emergency Calculator</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	<meta charset="UTF-8">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- Display Title on Page in Header-->
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <button id= "login_button">Login</button><br><br>
+            <button id= "logout_button">Logout</button><br><br>
+            <button id= "registration_button">Register</button><br><br>
+            <button class= "save_image_button"
+            onclick="saveImage()">Save Image</button><br>
+          </ul>
+        </div>
+      </nav>
+	
+	<section>
+	  <script>
+      document.getElementById("login_button").addEventListener("click",openLogin);
+      document.getElementById("logout_button").addEventListener("click",logout);
+      document.getElementById("registration_button").addEventListener("click",register);
+
+          function openLogin() {
+            location.href=("http://desktop-0cbjv6o:3000/login");
+          }
+          function closeLogin(){
+            document.getElementById("logoutForm").style.display = "none";
+          }
+          function register(){
+            location.href=("http://desktop-0cbjv6o:3000/register");
+          }
+
+          function logout(){
+            //alert("Here");
+            location.href=("http://desktop-0cbjv6o:3000/logout");
+          }
+          function saveImage(){}
+
+	  </script>
+	</section>
+	<footer id="footer">
+	<p>Dylan Engle,Weston Abner,Eric Bunch &copy;2021</p>
+	</footer>
   </body>
 </html>
+

@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>  
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+
 <body>
-<div class="login-form">
   <h3>Login Form</h3>
-<p><%=(typeof alertMsg!='undefined')? alertMsg:''%></p>
-<form method="post" action="/login">
-      <input type="text" placeholder="Username" name="username" required">
-      <input type="password" placeholder="Password" name="password" required">
-       <button type="submit">Login Now</button>
-       <a href="/register">New Registration</a>
+  <div class="login">
+    <p>
+      <%=(typeof alertMsg!='undefined' )? alertMsg:''%>
+    </p>
+    <form id="login" method="post" action="/login">
+      <input id = "Uname" type="text" placeholder="Username" name="username" required><br><br>
+      <input id = "Pass" type="password" placeholder="Password" name="password" required><br><br>
+      <button id = "log" type="submit">Login Now</button><br><br>
+      <a href="/register">New Registration</a>
   </div>
-</form>
-</div>
+  </form>
+  </div>
 
 </body>
+
 </html>

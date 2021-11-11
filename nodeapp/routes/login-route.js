@@ -18,7 +18,7 @@ router.post('/login', function(req, res){
             req.session.loggedinUser= true;
             req.session.username= data[0].username;
             req.session.userid = data[0].userid;
-            res.redirect('/dashboard');
+            res.redirect('/');
         }else{
             res.render('login-form',{alertMsg:"Your Username or Password is incorrect"});
         }
