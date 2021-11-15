@@ -23,11 +23,11 @@ router.get('/', function (req, res, next) {
             //req.session.calculation = data[0].calculation;
             //console.log(req.session.calculation);
             if (err) throw err;
-                res.render('index', { title: 'index', userData: data });
+                res.render('index', { title: 'index', userData: data});
         });
     }
     else{
-        res.render('index',{title:'index'});
+        res.render('index',{title:'index',userData:null});
     }
     
 });

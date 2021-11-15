@@ -19,7 +19,7 @@ var sql='SELECT * FROM user WHERE username =?';
 db.query(sql, [inputData.username] ,function (err, data, fields) {
  if(err) throw err
  if(data.length>1){
-     var msg = inputData.username+ "was already exist";
+     var msg = inputData.username+ "already exists.";
  }else{
      
     // save users data into database
