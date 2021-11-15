@@ -13,6 +13,7 @@ var router = express.Router();
 var db = require('../database');
 // another routes also appear here
 // this script to fetch data from MySQL databse table
+
 router.get('/', function (req, res, next) {
     if(req.session.loggedinUser) {
         var sql = `SELECT calculationid,userid,calculation,graphfunction FROM calculations WHERE userid=?`;

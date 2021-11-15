@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
   </head>
   <body>
+    <h1>Welcome <span id = "name"></span></h1>
     <!-- Display Title on Page in Header-->
     <nav role="navigation">
         <div id="menuToggle">
@@ -23,12 +24,42 @@
           </ul>
         </div>
       </nav>
+<br><br>
+      <div class="table-data">
+        <h2>User calculations</h2>
+            <table border="1">
+                <tr>
+                    <th>UserId</th>
+                    <th>Calculation</th>
+                    <th>Graph function</th>
+                </tr>
+                
+                <%
+                if(userData.length!=0){
+                var i=1;
+                userData.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=data.userid; %></td>
+                    <td><%=data.calculation %></td>
+                    <td><%=data.graphfunction %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+            </div>
 	
 	<section>
 	  <script>
       document.getElementById("login_button").addEventListener("click",openLogin);
       document.getElementById("logout_button").addEventListener("click",logout);
       document.getElementById("registration_button").addEventListener("click",register);
+      let name = data.username;
+      document.getElementById("name").innerHTML = name;
 
           function openLogin() {
             location.href=("http://desktop-0cbjv6o:3000/login");

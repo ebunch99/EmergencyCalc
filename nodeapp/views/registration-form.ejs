@@ -6,23 +6,22 @@
 </head>
 
 <body>
-  <div class="registration-form">
     <h3>Registration Form</h3>
+    <div class="login">
     <p>
       <%=(typeof alertMsg!='undefined' )? alertMsg:''%>
     </p>
-    <form method="post" action="register">
+    <form id="login" method="post" action="register">
       <div class="form-container">
-        <div><input type="text" placeholder="Username" name="username"></div>
+        <div><input id = "Uname" type="text" placeholder="Username" name="username"><br><br></div>
       </div>
       <div class="form-container">
-        <div><input type="password" placeholder="Password" name="password"></div>
+        <div><input id = "Pass" type="password" placeholder="Password" name="password"><br><br></div>
       </div>
-      <button type="submit">Register Now</button>
-      <a href="/login">Login</a>
+      <button type="submit" id = "log">Register Now</button><br><br>
+      <a href="/login">Sign in!</a>
     </form>
-  </div>
-
+</div>
 </body>
 
 </html>
