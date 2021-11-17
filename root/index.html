@@ -1,50 +1,136 @@
 <!-- etc -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Emergency Calculator</title>
-	<link rel="stylesheet" href="style.css">
-	<meta charset="UTF-8">
-  </head>
-  <body>
-    <!-- Display Title on Page in Header-->
-    <nav role="navigation">
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <button class= "login_button"
-            onclick="openLogin()">Login</button><br><br>
-            <button class= "logout_button"
-            onclick="logout()">Logout</button><br><br>
-            <button class= "register_button"
-            onclick="openRegister()">Register</button><br><br>
-            <button class= "save_image_button"
-            onclick="saveImage()">Save Image</button><br>
-          </ul>
-        </div>
-      </nav>
-	
-	<section>
-	  <script>
-          function openLogin() {
-              document.getElementById("loginForm").style.display = "block";
-          }
-          function closeLogin(){
-            document.getElementById("logoutForm").style.display = "none";
-          }
-          function openRegister();
-          function closeRegister();
 
-          function logout();
-          function saveImage();
+<head>
+  <title>Emergency Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+</head>
 
-	  </script>
-	</section>
-	<footer id="footer">
-	<p>Dylan Engle,Weston Abner,Eric Bunch &copy;2021</p>
-	</footer>
-  </body>
+<body>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <button class="login_button" onclick="openLogin()">Login</button><br><br>
+        <button class="logout_button" onclick="logout()">Logout</button><br><br>
+        <button class="register_button" onclick="openRegister()">Register</button><br><br>
+        <button class="save_image_button" onclick="alert('Hi There')">Save Image</button><br>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <table width=100% class="calculator">
+      <tr>
+        <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
+        <!-- clearScreen() function clear all the values -->
+        <td> <input class="button" type="button" value="C" onclick="clearScreen()" /> </td>
+      </tr>
+      <tr>
+        <!-- display() function display the value of clicked button -->
+        <td> <input class="button" type="button" value="x" onclick="display('x')" /> </td>
+        <td> <input class="button" type="button" value="y" onclick="display('y')" /> </td>
+        <td> <input class="button" type="button" value="z" onclick="display('z')" /> </td>
+        <td> <input class="button" type="button" value="i" onclick="display('i')" /> </td>
+      </tr>
+      <tr>
+        <!-- display() function display the value of clicked button -->
+        <td> <input class="button" type="button" value="1" onclick="display('1')" /> </td>
+        <td> <input class="button" type="button" value="2" onclick="display('2')" /> </td>
+        <td> <input class="button" type="button" value="3" onclick="display('3')" /> </td>
+        <td> <input class="button" type="button" value="/" onclick="display('/')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="4" onclick="display('4')" /> </td>
+        <td> <input class="button" type="button" value="5" onclick="display('5')" /> </td>
+        <td> <input class="button" type="button" value="6" onclick="display('6')" /> </td>
+        <td> <input class="button" type="button" value="-" onclick="display('-')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="7" onclick="display('7')" /> </td>
+        <td> <input class="button" type="button" value="8" onclick="display('8')" /> </td>
+        <td> <input class="button" type="button" value="9" onclick="display('9')" /> </td>
+        <td> <input class="button" type="button" value="+" onclick="display('+')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="." onclick="display('.')" /> </td>
+        <td> <input class="button" type="button" value="0" onclick="display('0')" /> </td>
+        <!-- calculate() function will probably fail if used with anything past the warning -->
+        <td> <input class="button" type="button" value="=" onclick="calculate()" /> </td>
+        <td> <input class="button" type="button" value="*" onclick="display('*')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="sin" onclick="display('sin')" /> </td>
+        <td> <input class="button" type="button" value="cos" onclick="display('cos')" /> </td>
+        <td> <input class="button" type="button" value="tan" onclick="display('tan')" /> </td>
+        <td> <input class="button" type="button" value="π" onclick="display('π')" /> </td>
+      </tr>
+
+      <!-- WARNING -->
+      <tr>
+        <td> <input class="button" type="button" value="x^2" onclick="display('x^2')" /> </td>
+        <td> <input class="button" type="button" value="x^-1" onclick="display('x^-1')" /> </td>
+        <td> <input class="button" type="button" value="x^y" onclick="display('x^y')" /> </td>
+        <td> <input class="button" type="button" value="√" onclick="display('√')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="ln" onclick="display('ln')" /> </td>
+        <td> <input class="button" type="button" value="log" onclick="display('log')" /> </td>
+        <td> <input class="button" type="button" value="e" onclick="display('e')" /> </td>
+        <td> <input class="button" type="button" value="e^x" onclick="display('e^x')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="(" onclick="display('(')" /> </td>
+        <td> <input class="button" type="button" value=")" onclick="display(')')" /> </td>
+        <td> <input class="button" type="button" value="[" onclick="display('[')" /> </td>
+        <td> <input class="button" type="button" value="]" onclick="display(']')" /> </td>
+      </tr>      
+    </table>
+
+    <br><br><br><br>
+    <label>Function 1:
+      <input list="functionOne" name="mFunctionOne" /></label>
+    <datalist id="functionOne">
+      <option value="2x + 5">
+      <option value="6x - 2">
+    </datalist>
+
+    <br><br><br><br>
+    <label>Function 2:
+      <input list="functionTwo" name="mFunctionTwo" /></label>
+    <datalist id="functionTwo">
+      <option value="2x + 5">
+      <option value="6x - 2">
+    </datalist>
+
+    <br><br><br><br>
+    <label>Function 3:
+      <input list="functionThree" name="mFunctionThree" /></label>
+    <datalist id="functionThree">
+      <option value="2x + 5">
+      <option value="6x - 2">
+    </datalist>
+
+
+  </div>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">← Calculator</button>
+  </div>
+
+  <section>
+    <script type="text/javascript" src="script.js"></script>
+  </section>
+  <footer id="footer">
+    <p>Dylan Engle,Weston Abner,Eric Bunch &copy;2021</p>
+  </footer>
+</body>
+
 </html>
