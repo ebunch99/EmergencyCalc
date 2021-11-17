@@ -1,18 +1,7 @@
-/*var express = require('express');
-var router = express.Router();
-
-/* GET home page. 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;*/
-
 var express = require('express');
 var router = express.Router();
 var db = require('../database');
-// another routes also appear here
-// this script to fetch data from MySQL databse table
+
 
 router.get('/', function (req, res, next) {
     if(req.session.loggedinUser) {
