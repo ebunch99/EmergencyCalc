@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
         var sql = `SELECT calculationid,userid,calculation,graphfunction FROM calculations WHERE userid=?`;
 
         console.log(req.session);
-        db.query(sql, [req.session.userid], function (err, data, fields) {
+        db.query(sql, [req.session.userid,req.session.username], function (err, data, fields) {
             //req.session.calculation = data[0].calculation;
             //console.log(req.session.calculation);
             if (err) throw err;
