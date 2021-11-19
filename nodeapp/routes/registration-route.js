@@ -18,7 +18,7 @@ router.post('/register', function(req, res, next) {
 var sql='SELECT * FROM user WHERE username =?';
 db.query(sql, [inputData.username] ,function (err, data, fields) {
  if(err) throw err
- if(data.length>1){
+ if(data.length>0){
      var msg = inputData.username+ "already exists.";
  }else{
      
