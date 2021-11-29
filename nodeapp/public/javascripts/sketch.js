@@ -1,5 +1,6 @@
 function setup() { 
 	let c =createCanvas(400, 400);
+	c.parent("graphSketch");
 	strokeWeight(1);
 	background(220)
 	  for(var i=0; i<height; i+=20){
