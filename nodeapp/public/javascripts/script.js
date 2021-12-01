@@ -1,6 +1,3 @@
-var calculation;
-var graphfunction;
-
 function openLogin() {
     location.href = ("http://desktop-0cbjv6o:3000/login");
 }
@@ -17,7 +14,7 @@ function logout(){
     location.href = ("http://desktop-0cbjv6o:3000/logout");
 }
 function returnHome(){
-  
+  location.href = ("http://desktop-0cbjv6o:3000/");
 }
 function saveImage(){
   alert("p5 implementation of graph save")
@@ -72,9 +69,12 @@ function clearScreen() {
 
             calculation = rowSelected.cells[1].innerHTML;
             graphfunction = rowSelected.cells[2].innerHTML;
+
+            localStorage.setItem("calc", rowSelected.cells[1].innerHTML);
+            localStorage.setItem("graph",rowSelected.cells[2].innerHTML);
         }
     }
 }
 function importData(){
-console.log("Calculation: " + calculation+" Graph Function: "+graphfunction);
+console.log("Calculation: " + localStorage.getItem("calc")+" Graph Function: "+localStorage.getItem("graph"));
 }
