@@ -76,5 +76,5 @@ function clearScreen() {
     }
 }
 function importData(){
-console.log("Calculation: " + localStorage.getItem("calc")+" Graph Function: "+localStorage.getItem("graph"));
+alert("Calculation: " + localStorage.getItem("calc") + "Graph Function: "+ localStorage.getItem("graph"));
 }
