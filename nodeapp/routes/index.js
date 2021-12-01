@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     res.render('index');
   });
 
-router.post('/index', function (req, res, next) {
+router.post('/index', function (req, res, next, data) {
     var sql = `INSERT INTO calculations (userid,calculation,graphfunction) VALUES ('${req.session.userid}','${req.body.calculation}','${req.body.graphfunction}')`;
     db.query(sql,function (err, data) {
         if (err) throw err;});

@@ -20,12 +20,13 @@
         <button class="login_button" onclick="openLogin()">Login</button><br><br>
         <button class="logout_button" onclick="logout()">Logout</button><br><br>
         <button class="register_button" onclick="openRegister()">Register</button><br><br>
+        <button class="login_button" onclick="openCalc()">View Calculations</button><br><br>
         <button class="save_image_button" onclick="alert('Hi There')">Save Image</button><br>
       </ul>
     </div>
   </nav>
   </div>
-
+  <input class="button" type="button" value="Test!" onclick="importData()" />
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <table width=100% class="calculator">
@@ -96,12 +97,14 @@
     </table>
 
     <br><br><br><br>
+    <table>
     <label>Function 1:
       <input list="functionOne" name="mFunctionOne" id = "f1" /></label>
     <datalist id="functionOne">
       <option value="2x + 5">
       <option value="6x - 2">
     </datalist>
+
 
     <br><br><br><br>
     <label>Function 2:
@@ -118,6 +121,7 @@
       <option value="2x + 5">
       <option value="6x - 2">
     </datalist>
+    </table>
 
 
   </div>

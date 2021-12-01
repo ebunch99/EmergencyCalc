@@ -2,38 +2,46 @@
 <html>
 
 <head>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
     <div class="table-data">
         <h2>User calculations</h2>
-            <table border="1">
-                <tr>
-                    <th>UserId</th>
-                    <th>Calculation</th>
-                    <th>Graph function</th>
+        <table border="1" id="display-table" class="table-layout">
+            <tr>
+                <th>UserId</th>
+                <th>Calculation</th>
+                <th>Graph function</th>
+            </tr>
+
+
+            <% if(userData!=null){ var i=1; userData.forEach(function(data){ %>
+                <tr id = "<%i;%>">
+                    <td class = "row-data">
+                        <%=data.userid;%>
+                    </td>
+                    <td class = "row-data">
+                        <%=data.calculation %>
+                    </td>
+                    <td class = "row-data">
+                        <%=data.graphfunction %>
+                    </td>
                 </tr>
-                
-                
-                <%
-                if(userData!=null){
-                var i=1;
-                userData.forEach(function(data){
-                %>
-                <tr>
-                    <td><%=data.userid; %></td>
-                    <td><%=data.calculation %></td>
-                    <td><%=data.graphfunction %></td>
-                </tr>
-                <%  i++; }) %>
-                <% } else{ %>
-                    <tr>
-                        <td colspan="7">No Data Found</td>
-                    </tr>
-                <% } %>
-            </table>
-            </div>
+                <% i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                        <% } %>
+        </table>
+    </div>
+    <div>
+        <script type="text/javascript" src="/javascripts/script.js"></script>
+      </div>
+    <script>
+        highlight_row();
+    </script>
 </body>
 
 </html>
