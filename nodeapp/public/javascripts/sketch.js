@@ -1,38 +1,38 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var calculater = require("./calc");
+
 function setup() { 
 	let c =createCanvas(400, 400);
-	c.parent("graphSketch");
 	strokeWeight(1);
 	background(220)
-	  for(var i=0; i<height; i+=20){
-		  line(0, i, width, i);
-	  }
-	  for(var j=0; j<height; j+=20){
-		  line(j, 0, j, height);
-	  }
+	  
+	  
   } 
-  
-  function draw() { 
-	
-	
-	noFill();
-	let x=0;
-	let y=0;
-	let arrx=[];
-	let arry=[];
-	for(i =-10;i <= 10; i++){
-	  x=i;
-	  y=x*x;
-	  x= 200 + x*20;
-	  y= 200 + -y*20;
-	  arrx.push(x);
-	  arry.push(y);
+  exports.draw=void 0;
+  function draw(arrx, arry,gline,scale,color) { 	
+	  if(gline==true){
+	for(var i=0; i<height; i+=scale){
+		line(0, i, width, i);
 	}
-	strokeWeight(1);
-	beginShape();
+	for(var j=0; j<height; j+=scale){
+		line(j, 0, j, height);
+	}
+}
 	for(i = 0;i < arrx.length;i++){
-		  curveVertex(arrx[i],arry[i]);
+		noFill();
+		strokeWeight(1);
+		stroke(color)
+		beginShape();
+		for(j=0; j<arrx[i].length;j++){
+			curveVertex(arrx[i][j],arry[i][j]);
+
+		}
+		endShape();
+		  
 	}
-	endShape();
+	
 	//saveCanvas(c,'mycanvas', 'jpg')
 	//saveCanvas(c,'mycanvas', 'png')
   }  
+  exports.draw=draw;

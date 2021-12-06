@@ -20,20 +20,18 @@
         <button class="login_button" onclick="openLogin()">Login</button><br><br>
         <button class="logout_button" onclick="logout()">Logout</button><br><br>
         <button class="register_button" onclick="openRegister()">Register</button><br><br>
-        <button class="login_button" onclick="openCalc()">View Calculations</button><br><br>
+        <button class="login_button" onclick="openCalc()">Formula History</button><br><br>
         <button class="save_image_button" onclick="alert('Hi There')">Save Image</button><br>
       </ul>
     </div>
   </nav>
   </div>
 
-  <input class="button" type="button" value="I forgot my saved calculation!" onclick="importData()" />
-
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <table width=100% class="calculator">
       <tr>
-        <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
+        <td colspan="3"><input class="display-box" type="text" id="result" /> </td>
         <!-- clearScreen() function clear all the values -->
         <td> <input class="button" type="button" value="C" onclick="clearScreen()" /> </td>
       </tr>
@@ -67,7 +65,7 @@
         <td> <input class="button" type="button" value="." onclick="display('.')" /> </td>
         <td> <input class="button" type="button" value="0" onclick="display('0')" /> </td>
         <!-- calculate() function will probably fail if used with anything past the warning -->
-        <td> <input class="button" type="button" value="=" onclick="calculate()" /> </td>
+        <td> <input class="button" type="button" value="=" onclick="calculationFunc()" /> </td>
         <td> <input class="button" type="button" value="*" onclick="display('*')" /> </td>
       </tr>
       <tr>
@@ -95,13 +93,20 @@
         <td> <input class="button" type="button" value=")" onclick="display(')')" /> </td>
         <td> <input class="button" type="button" value="[" onclick="display('[')" /> </td>
         <td> <input class="button" type="button" value="]" onclick="display(']')" /> </td>
-      </tr>      
+        <td> <input class="button" type="button" value="Graph" onclick="graph()" /> </td>
+      </tr>  
+    </table>
+
+    <table>
+      <tr>
+        <td><input class="button" type="button" value="I forgot my saved calculation!" onclick="moveCalc()" /></td>
+      </tr> 
     </table>
 
     <br><br><br><br>
     <table>
     <label>Function 1:
-      <input list="functionOne" name="mFunctionOne" id = "f1" /></label>
+      <input list="functionOne" name="mFunctionOne" id = "graphfunc1" /></label>
     <datalist id="functionOne">
       <option value="2x + 5">
       <option value="6x - 2">
@@ -110,7 +115,7 @@
 
     <br><br><br><br>
     <label>Function 2:
-      <input list="functionTwo" name="mFunctionTwo" /></label>
+      <input list="functionTwo" name="mFunctionTwo" id="graphfunc2" /></label>
     <datalist id="functionTwo">
       <option value="2x + 5">
       <option value="6x - 2">
@@ -118,27 +123,27 @@
 
     <br><br><br><br>
     <label>Function 3:
-      <input list="functionThree" name="mFunctionThree" /></label>
+      <input list="functionThree" name="mFunctionThree" id="graphfunc3" /></label>
     <datalist id="functionThree">
       <option value="2x + 5">
       <option value="6x - 2">
     </datalist>
     </table>
-
-
+    <button id = "log" type="submit">Login Now</button>
   </div>
 
   <div id="main">
     <button class="openbtn" onclick="openNav()">← Calculator</button><br><br>
   </div>
 
-  <div id = "graphSketch">
+  <!--<div id = "graphSketch">
     <script src="javascripts/sketch.js"></script>
-  </div>
+  </div>-->
 
-  <div>
+  <div id="graphSketch">
     <script type="text/javascript" src="/javascripts/script.js"></script>
   </div>
+
   <footer id="footer">
     <p>Dylan Engle,Weston Abner,Eric Bunch &copy;2021</p>
   </footer>

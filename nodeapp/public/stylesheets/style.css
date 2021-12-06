@@ -305,5 +305,7 @@ label{
 } 
 #graphSketch{
   text-align: center;
+  align-content: center;
+  vertical-align: middle;
 } 
 
