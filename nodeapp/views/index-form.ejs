@@ -93,44 +93,50 @@
         <td> <input class="button" type="button" value=")" onclick="display(')')" /> </td>
         <td> <input class="button" type="button" value="[" onclick="display('[')" /> </td>
         <td> <input class="button" type="button" value="]" onclick="display(']')" /> </td>
-        <td> <input class="button" type="button" value="Graph" onclick="graph()" /> </td>
       </tr>  
     </table>
 
     <table>
       <tr>
         <td><input class="button" type="button" value="I forgot my saved calculation!" onclick="moveCalc()" /></td>
+      </tr>
+      <tr>
+        <td><input class="button" type="button" value="I forgot my saved graph function!" onclick="moveGraphFunc()" /></td>
       </tr> 
     </table>
 
     <br><br><br><br>
     <table>
+      <tr>
     <label>Function 1:
       <input list="functionOne" name="mFunctionOne" id = "graphfunc1" /></label>
+    <td><input class="button" type="button" value="Graph" onclick="graph()" /></td>
+    </tr>
     <datalist id="functionOne">
       <option value="2x + 5">
       <option value="6x - 2">
     </datalist>
-
-
-    <br><br><br><br>
-    <label>Function 2:
-      <input list="functionTwo" name="mFunctionTwo" id="graphfunc2" /></label>
-    <datalist id="functionTwo">
-      <option value="2x + 5">
-      <option value="6x - 2">
-    </datalist>
-
-    <br><br><br><br>
-    <label>Function 3:
-      <input list="functionThree" name="mFunctionThree" id="graphfunc3" /></label>
-    <datalist id="functionThree">
-      <option value="2x + 5">
-      <option value="6x - 2">
-    </datalist>
     </table>
-    <button id = "log" type="submit">Login Now</button>
+
+    <table>
+      <div>
+        <p>
+          <%=(typeof alertMsg!='undefined' )? alertMsg:''%>
+        </p>
+        <form method="post" action="index">
+          <div>
+            <div><input id = "Calc" type="text" placeholder="Calculation" name="calc"><br><br></div>
+          </div>
+          <div class="form-container">
+            <div><input id = "Graphfunc" type="text" placeholder="Graph Function" name="graphfunc"><br><br></div>
+          </div>
+          
+          <button id = "log" disabled>Does Not Work</button><br><br>
+        </form>
+    </div>
+    </table>
   </div>
+
 
   <div id="main">
     <button class="openbtn" onclick="openNav()">← Calculator</button><br><br>

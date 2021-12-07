@@ -379,7 +379,6 @@ function clearScreen() {
 
    function calculationFunc() {
     var p = document.getElementById("result").value;
-    console.log("Here");
     var q = calcbutton(p);
     document.getElementById("result").value = q;
    }
@@ -389,11 +388,11 @@ function clearScreen() {
     var cells = table.getElementsByTagName('td');
 
     for (var i = 0; i < cells.length; i++) {
-        // Take each cell
+        
         var cell = cells[i];
-        // do something on onclick event for cell
+        
         cell.onclick = function () {
-            // Get the row id where the cell exists
+            
             var rowId = this.parentNode.rowIndex;
 
             var rowsNotSelected = table.getElementsByTagName('tr');
@@ -425,5 +424,5 @@ function moveCalc() {
   } 
 
   function moveGraphFunc(){
-    document.getElementById("result").value = localStorage.getItem("calc");
+    document.getElementById("graphfunc1").value = localStorage.getItem("graph");
   }
