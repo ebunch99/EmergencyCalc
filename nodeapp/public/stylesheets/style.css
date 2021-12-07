@@ -308,4 +308,18 @@ label{
   align-content: center;
   vertical-align: middle;
 } 
+#display-table{
+  text-align: center;
+  align-content: center;
+}
+#CalcBody{
+  text-align: center;
+}
+h2{
+  text-align: left;
+}
+#return{
+  align-content: left;
+  text-align: left;
+}
 
