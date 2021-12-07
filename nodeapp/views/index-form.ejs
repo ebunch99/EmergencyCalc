@@ -118,6 +118,13 @@
     </datalist>
     </table>
 
+    <!--This is where the inserstion form is for inserting data from a saved user into the database.
+    
+    It is giving a 404 error and saying that the index action cannot be found when it is clearly defined 
+  
+    in post in index.js. Putting this information into the GET instead of the POST in index.js will cause 
+  
+    undefined to be inserted into the database upon logging in, but this is not helpful-->
     <table>
       <div>
         <p>
@@ -130,11 +137,12 @@
           <div class="form-container">
             <div><input id = "Graphfunc" type="text" placeholder="Graph Function" name="graphfunc"><br><br></div>
           </div>
-          
+
           <button id = "log" disabled>Does Not Work</button><br><br>
         </form>
     </div>
     </table>
+    <!---->
   </div>
 
 
